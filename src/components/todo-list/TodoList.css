@@ -1,0 +1,25 @@
+.todo-list {
+    border: 1px solid var(--app-grey);
+    width: 100%;
+    padding: 10px;
+    background: var(--app-white);
+    border-radius: 8px;
+    box-shadow: 0rem 2rem 5rem rgba(0,0,0,0.15);
+}
+
+@media screen and (min-width: 1280px) {
+    .todo-list {
+        width: 600px;
+        padding: 25px;
+    }
+}
+
+.todo-list h3 {
+    color: var(--app-charcoal);
+    margin: 0;
+}
+
+.todo-list-header {
+    margin-bottom: 25px;
+    display: flex;
+}
