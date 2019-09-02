@@ -19,6 +19,10 @@ export default class App extends Component{
           items={this.state.items}
           didUpdate={this._didUpdate}
         />
+        <div className="app-author">
+          <p>A small web app by <a href="https://samogorman.dev/">Samantha O'Gorman</a></p>
+          <p>NOTE: This app only stores data to your browsers local storage.</p>
+        </div>
       </div>
     );
   }

@@ -31,3 +31,14 @@ body {
     padding: 45px;
   }
 }
+
+.app-author {
+  text-align: center;
+  color: var(--app-white);
+}
+
+.app-author a {
+  text-decoration: none;
+  color: var(--app-white);
+  font-weight: bold;
+}
