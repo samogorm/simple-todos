@@ -23,7 +23,13 @@ export const TodoItem = (props) => {
 
         // update the todos.
         localStorage.setItem('todos', JSON.stringify(todos));
+
+        _didUpdate(todos);
     };
+
+    const _didUpdate = (value) => {
+        props.didUpdate(value);
+    }
 
     const _removeTodo = (target) => {
         let todos = JSON.parse(localStorage.getItem('todos'));
@@ -33,7 +39,8 @@ export const TodoItem = (props) => {
 
         // update the localstorage.
         localStorage.setItem('todos', JSON.stringify(todos));
-        
+
+        _didUpdate(todos);
     }
 
     return(

@@ -6,13 +6,19 @@ import './TodoList.css';
 
 export const TodoList = (props) => {
 
+    const _didUpdate = (value) => {
+        props.didUpdate(value);
+    }
+
     return(
         <div className="todo-list">
             <div className="todo-list-header">
                 <h3>Todo List</h3>
             </div>
             <div className="todo-list-add-todo">
-                <AddTodo />
+                <AddTodo 
+                    didUpdate={_didUpdate}
+                />
             </div>
             <div className="todo-list-body">
                 {
@@ -23,6 +29,7 @@ export const TodoList = (props) => {
                                 id={index}
                                 title={item.title}
                                 completed={item.completed}
+                                didUpdate={_didUpdate}
                             />
                         )
                     }) : null

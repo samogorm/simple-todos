@@ -17,10 +17,15 @@ export default class App extends Component{
       <div className="app">
         <TodoList
           items={this.state.items}
+          didUpdate={this._didUpdate}
         />
       </div>
     );
   }
 
-  
+  _didUpdate = (value) => {
+    this.setState({items: value})
+  }
+
+
 }

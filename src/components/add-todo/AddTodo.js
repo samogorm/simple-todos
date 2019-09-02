@@ -4,7 +4,11 @@ import './AddTodo.css';
 
 const PlusIcon = require('./../../assets/plus.svg');
 
-export const AddTodo = () => {
+export const AddTodo = (props) => {
+
+    const _didUpdate = (value) => {
+        props.didUpdate(value);
+    }
 
     return(
         <div className="add-todo">
@@ -27,6 +31,9 @@ export const AddTodo = () => {
                 localStorage.setItem('todos', JSON.stringify(todos));
 
                 input.value = '';
+
+                // pass prompt back up the chain.
+                _didUpdate(todos);
             }}>
                 <img src={PlusIcon} alt="Plus icon" />
             </button>
