@@ -13,7 +13,17 @@ export const TodoItem = (props) => {
     * 
     * @var {Object} value the object passed from the child.
     */
-    const _captureOptionValue = (value) => setCompleted(value);
+    const _captureOptionValue = (value) => {
+        setCompleted(value);
+
+        // go and update the value in the localstorage.
+        let todos = JSON.parse(localStorage.getItem('todos'));
+        let todo = todos[props.id];
+        todo.completed = value;
+
+        // update the todos.
+        localStorage.setItem('todos', JSON.stringify(todos));
+    };
 
     const _removeTodo = (target) => {
         let todos = JSON.parse(localStorage.getItem('todos'));

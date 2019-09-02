@@ -25,6 +25,8 @@ export const AddTodo = () => {
 
                 // Set new todos.
                 localStorage.setItem('todos', JSON.stringify(todos));
+
+                input.value = '';
             }}>
                 <img src={PlusIcon} alt="Plus icon" />
             </button>
