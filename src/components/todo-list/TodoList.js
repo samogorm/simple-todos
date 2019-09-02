@@ -1,5 +1,6 @@
 import React from 'react';
 import {TodoItem} from './../todo-item/TodoItem';
+import { AddTodo } from '../add-todo/AddTodo';
 
 import './TodoList.css';
 
@@ -10,18 +11,21 @@ export const TodoList = (props) => {
             <div className="todo-list-header">
                 <h3>Todo List</h3>
             </div>
+            <div className="todo-list-add-todo">
+                <AddTodo />
+            </div>
             <div className="todo-list-body">
                 {
-                    props.items.map(item => {
+                    props.items !== null ? props.items.map((item, index) => {
                         return (
                             <TodoItem
-                                key={item.id}
-                                id={item.id}
+                                key={index}
+                                id={index}
                                 title={item.title}
                                 completed={item.completed}
                             />
                         )
-                    })
+                    }) : null
                 }
             </div>
             <div className="todo-list-footer">

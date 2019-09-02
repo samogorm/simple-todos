@@ -15,6 +15,17 @@ export const TodoItem = (props) => {
     */
     const _captureOptionValue = (value) => setCompleted(value);
 
+    const _removeTodo = (target) => {
+        let todos = JSON.parse(localStorage.getItem('todos'));
+        let index = target.getAttribute('data-todo');
+
+        todos.splice(index, 1);
+
+        // update the localstorage.
+        localStorage.setItem('todos', JSON.stringify(todos));
+        
+    }
+
     return(
         <div id={props.id} className={completed ? 'todo-item todo-item--checked' : 'todo-item'}>
             <CheckboxButton 
@@ -23,7 +34,7 @@ export const TodoItem = (props) => {
             />
             <p>{props.title}</p>
             
-            <div className="delete-todo">
+            <div data-todo={props.id} className="delete-todo" onClick={(event) => _removeTodo(event.target.parentElement)}>
                 <img src={CrossIcon} alt="Cross icon"/>
             </div>
         </div>
