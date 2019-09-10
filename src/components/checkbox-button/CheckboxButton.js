@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './CheckboxButton.css';
+import './CheckboxButton.scss';
 
 const CheckIcon = require('./../../assets/check.svg');
 

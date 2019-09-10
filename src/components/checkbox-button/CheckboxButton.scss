@@ -7,17 +7,16 @@
     background: var(--app-grey);
     transition: all .5s ease-in-out;
 
-}
+    &--checked {
+        background: var(--app-green);
+    }
 
-.checkbox-button--checked {
-    background: var(--app-green);
-}
+    &:hover {
+        cursor: pointer;
+    }
 
-.checkbox-button:hover {
-    cursor: pointer;
-}
-
-.checkbox-button img {
-    width: 10px;
-    height: auto;
+    img {
+        width: 10px;
+        height: auto;
+    }
 }
