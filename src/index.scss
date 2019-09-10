@@ -24,21 +24,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media screen and (min-width: 1280px) {
   body {
     padding: 45px;
   }
-}
-
-.app-author {
-  text-align: center;
-  color: var(--app-white);
-}
-
-.app-author a {
-  text-decoration: none;
-  color: var(--app-white);
-  font-weight: bold;
 }
