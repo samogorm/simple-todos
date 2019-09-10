@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { CheckboxButton } from '../checkbox-button/CheckboxButton';
 
-import './TodoItem.css';
+import './TodoItem.scss';
 
 const CrossIcon = require('./../../assets/times.svg');
 
