@@ -1,26 +1,24 @@
 import React from 'react';
 import {TodoItem} from './../todo-item/TodoItem';
-import { AddTodo } from '../add-todo/AddTodo';
+import {AddTodo} from '../add-todo/AddTodo';
 
-import './TodoList.css';
+import './TodoList.scss';
 
 export const TodoList = (props) => {
 
-    const _didUpdate = (value) => {
-        props.didUpdate(value);
-    }
+    const _didUpdate = (value) => props.didUpdate(value);
 
     return(
         <div className="todo-list">
-            <div className="todo-list-header">
+            <div className="todo-list__header">
                 <h3>Todo List</h3>
             </div>
-            <div className="todo-list-add-todo">
+            <div className="todo-list__add-todo">
                 <AddTodo 
                     didUpdate={_didUpdate}
                 />
             </div>
-            <div className="todo-list-body">
+            <div className="todo-list__body">
                 {
                     props.items !== null ? props.items.map((item, index) => {
                         return (
@@ -34,9 +32,6 @@ export const TodoList = (props) => {
                         )
                     }) : null
                 }
-            </div>
-            <div className="todo-list-footer">
-
             </div>
         </div>
     )

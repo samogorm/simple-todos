@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { CheckboxButton } from '../checkbox-button/CheckboxButton';
+import {CheckboxButton} from '../checkbox-button/CheckboxButton';
 
 import './TodoItem.scss';
 
