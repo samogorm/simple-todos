@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './AddTodo.css';
+import './AddTodo.scss';
 
 const PlusIcon = require('./../../assets/plus.svg');
 
