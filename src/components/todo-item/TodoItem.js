@@ -18,7 +18,7 @@ export const TodoItem = (props) => {
         setCompleted(value);
 
         // go and update the value in the localstorage.
-        let todos = getTodos;
+        let todos = getTodos();
         let todo = todos[props.id];
         todo.completed = value;
 
