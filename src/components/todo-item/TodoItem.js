@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {CheckboxButton} from '../checkbox-button/CheckboxButton';
+import {getTodos, setTodos} from './../../constants/localStorage';
 
 import './TodoItem.scss';
 
@@ -17,28 +18,26 @@ export const TodoItem = (props) => {
         setCompleted(value);
 
         // go and update the value in the localstorage.
-        let todos = JSON.parse(localStorage.getItem('todos'));
+        let todos = getTodos;
         let todo = todos[props.id];
         todo.completed = value;
 
         // update the todos.
-        localStorage.setItem('todos', JSON.stringify(todos));
+        setTodos(todos);
 
         _didUpdate(todos);
     };
 
-    const _didUpdate = (value) => {
-        props.didUpdate(value);
-    }
+    const _didUpdate = (value) => props.didUpdate(value);
 
     const _removeTodo = (target) => {
-        let todos = JSON.parse(localStorage.getItem('todos'));
+        let todos = getTodos();
         let index = target.getAttribute('data-todo');
 
         todos.splice(index, 1);
 
         // update the localstorage.
-        localStorage.setItem('todos', JSON.stringify(todos));
+        setTodos(todos);
 
         _didUpdate(todos);
     }

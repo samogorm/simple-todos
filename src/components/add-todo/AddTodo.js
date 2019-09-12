@@ -1,4 +1,5 @@
 import React from 'react';
+import {getTodos, setTodos} from './../../constants/localStorage';
 
 import './AddTodo.scss';
 
@@ -6,9 +7,7 @@ const PlusIcon = require('./../../assets/plus.svg');
 
 export const AddTodo = (props) => {
 
-    const _didUpdate = (value) => {
-        props.didUpdate(value);
-    }
+    const _didUpdate = (value) => props.didUpdate(value);
 
     return(
         <div className="add-todo">
@@ -17,7 +16,7 @@ export const AddTodo = (props) => {
                 let input = document.querySelector('#add-todo');
 
                 // get available todos.
-                let todos = JSON.parse(localStorage.getItem('todos'));
+                let todos = getTodos();
 
                 let todo = {
                     title: input.value,
@@ -28,7 +27,7 @@ export const AddTodo = (props) => {
                 else todos = [todo];
 
                 // Set new todos.
-                localStorage.setItem('todos', JSON.stringify(todos));
+                setTodos(todos);
 
                 input.value = '';
 
@@ -39,5 +38,4 @@ export const AddTodo = (props) => {
             </button>
         </div>
     )
-
 }
