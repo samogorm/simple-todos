@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {TodoList} from './components/todo-list/TodoList';
-
-import './App.scss';
+import {Author} from './components/author/Author';
 
 export const App = () => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todos')));
@@ -14,10 +13,10 @@ export const App = () => {
         items={items}
         didUpdate={_didUpdate}
       />
-      <div className="app-author">
-        <p>A small web app by <a href="https://samogorman.dev/">Samantha O'Gorman</a></p>
-        <p>NOTE: This app only stores data to your browsers local storage.</p>
-      </div>
+      <Author 
+        url="https://samogorman.dev/"
+        name="Samantha O'Gorman"
+      />
     </div>
   );
 }
